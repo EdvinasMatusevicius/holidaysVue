@@ -15,7 +15,7 @@ export default {
   },
   getHolidays: async(requestData,success,failure)=>{
     try {
-      paramsUrl = `${requestData.countryCode}/${requestData.year}`+ (requestData.region ? `/${requestData.region}` : ''); 
+      let paramsUrl = `${requestData.countryCode}/${requestData.year}`+ (requestData.region ? `/${requestData.region}` : ''); 
       const response = await api().get(API_URL + 'holidays/'+paramsUrl);
       success(response.data.message);
     } catch (error) {
